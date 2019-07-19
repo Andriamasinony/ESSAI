@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">numero compte</th>
+      <th scope="col">nom client</th>
+      <th scope="col">solde</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+     {% for listClient in listClient %}
+      <tr class="table-active">
+    <th scope="row">{{listClient.id}}</th>
+      <td>{{listClient.numCompte}}</td>
+      <td>{{listClient.nomClient}}</td>
+      <td>{{listClient.solde}}</td>
+      <td>
+      <a href="/client/detail" class="btn btn-info">Détail</a>
+      <a href="/client/creation" class="btn btn-secondary">modifier</a>
+      <a href="/client/supprimer" class="btn btn-danger">supprimer</a>
+      </td>
+    {% endfor %}
+      
+    </tr>
+    
+</table>
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-link">Link</button> 
+{% endblock %}

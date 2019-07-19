@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Versement{% endblock %}
+
+{% block body %}
+    <h1>Versement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ versement.id }}</td>
+            </tr>
+            <tr>
+                <th>NumVersement</th>
+                <td>{{ versement.numVersement }}</td>
+            </tr>
+            <tr>
+                <th>NumCheque</th>
+                <td>{{ versement.numCheque }}</td>
+            </tr>
+            <tr>
+                <th>Num_compte</th>
+                <td>{{ versement.numCompte }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ versement.montant }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('versement_index') }}">back to list</a>
+
+    <a href="{{ path('versement_edit', {'id': versement.id}) }}">edit</a>
+
+    {{ include('versement/_delete_form.html.twig') }}
+{% endblock %}
